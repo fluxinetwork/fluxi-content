@@ -152,7 +152,6 @@ if( ! class_exists('fluxicontent') ) :
 	 * Include Fluxi content elements functions
 	 */
 	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-titre.php' );
-	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-sous-titre.php' );
 	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-texte.php' );
 	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-image.php' );
 	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-liste.php' );
@@ -236,8 +235,8 @@ if( ! class_exists('fluxicontent') ) :
 	 * get_fluxi_fields
 	 *
 	 *  @type	function
-	 *  @date	16/06/16
-	 *  @since	1.0.0
+	 *  @date	05/04/17
+	 *  @since	1.0.1
 	 *
 	 *  @param   INT $post_id
 	 *  @return  HTML - fluxi content ACF fields content with html
@@ -252,11 +251,11 @@ if( ! class_exists('fluxicontent') ) :
 
 			    while ( have_rows('elements_page', $post_id) ) : the_row();
 
-			        if ( get_row_layout() == 'titre' ):
-						$all_fluxi_content .= get_bloc_titre ();
+			        if ( get_row_layout() == 'titre_1' ):
+						$all_fluxi_content .= get_bloc_titre_1 ();
 
-					elseif ( get_row_layout() == 'sous-titre' ):
-						$all_fluxi_content .= get_bloc_sous_titre ();
+					elseif ( get_row_layout() == 'titre_2' ):
+						$all_fluxi_content .= get_bloc_titre_2 ();
 
 					elseif ( get_row_layout() == 'texte' ):
 						$all_fluxi_content .= get_bloc_texte ();
