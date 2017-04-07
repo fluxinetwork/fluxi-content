@@ -17,7 +17,7 @@
 		$image_caption = $image_only['caption'];	
 		$fluxi_content_image = '';
 
-		$fluxi_content_image .= '<a href="'.$image_only['sizes']['large'].'" class="js-is-lightbox"><figure class="c-figure"><img class="c-figure__img" src="'.$image_only['sizes']['single'].'" alt="'.$image_only['name'].'" />';
+		$fluxi_content_image .= '<a href="'.$image_only['sizes']['large'].'" class="js-is-lightbox"><figure class="c-figure"><img class="c-figure__img" src="'.$image_only['sizes']['large'].'" alt="'.$image_only['name'].'" />';
 				
 			if(  $image_caption ):									
 				$fluxi_content_image .= '<figcaption class="c-figure__caption">'.$image_caption.'</figcaption>';
