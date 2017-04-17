@@ -163,7 +163,6 @@ if( ! class_exists('fluxicontent') ) :
 	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-focus.php' );
 	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-lien.php' );
 	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-accordeon.php' );
-	require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-formateree.php' );
 	
 	//require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-texte-image.php' );
 	//require_once( FC_PLUGIN_DIR . 'core/elements/get-bloc-cliquable.php' );
@@ -186,13 +185,7 @@ if( ! class_exists('fluxicontent') ) :
 	    if( is_admin() ):
 		    // Only for post & page
 		    if ( get_post_type($post_id) == 'post'
-		    	|| get_post_type($post_id) == 'page'
-		    	|| get_post_type($post_id) == 'concours'
-		    	|| get_post_type($post_id) == 'portraits'
-		    	|| get_post_type($post_id) == 'webinaires'
-		    	|| get_post_type($post_id) == 'retours-experience'
-		    	|| get_post_type($post_id) == 'formations'
-		    	|| get_post_type($post_id) == 'evenements' ):
+		    	|| get_post_type($post_id) == 'page' ):
 		    	// If there is no ACF
 			 	if( empty($_POST['acf']) )
 			        return;
@@ -211,7 +204,7 @@ if( ! class_exists('fluxicontent') ) :
 
 		    	// Get Fluxi content
 		    	$the_fluxi_content = get_fluxi_fields($post_id);
-		    	$fluxi_resum = get_field('fluxi_resum', $post_id);
+		    	$fluxi_resum = get_field('extrait', $post_id);
 
 		    	// Update post content with Fluxi content
 		    	wp_update_post(
@@ -295,10 +288,6 @@ if( ! class_exists('fluxicontent') ) :
 
 					elseif ( get_row_layout() == 'accordeon' ):
 						$all_fluxi_content .= get_bloc_accordeon();
-
-					elseif ( get_row_layout() == 'formateree' ):
-						$all_fluxi_content .= get_bloc_formateree();
-
 
 			        endif;
 
