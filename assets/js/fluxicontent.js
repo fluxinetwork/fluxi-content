@@ -15,8 +15,8 @@
 */              
 
 // -- Galeries
-    if($('.js-gallery-damier').length){
-        $('.js-gallery-damier').lightGallery({
+    if(jQuery('.js-gallery-damier').length){
+        jQuery('.js-gallery-damier').lightGallery({
             thumbnail:false
             , thumbMargin:0
             , thumbContHeight:90
@@ -24,8 +24,8 @@
             , showThumbByDefault: false*/
         }); 
     }
-    if($('.js-gallery-vignettes').length){
-        $('.js-gallery-vignettes').lightSlider({
+    if(jQuery('.js-gallery-vignettes').length){
+        jQuery('.js-gallery-vignettes').lightSlider({
             gallery:true,
             item:1,
             loop:false,
@@ -41,8 +41,8 @@
             }   
         }); 
     }
-    if($('.js-gallery-slider').length){
-        $('.js-gallery-slider').lightSlider({
+    if(jQuery('.js-gallery-slider').length){
+        jQuery('.js-gallery-slider').lightSlider({
             gallery:false,
             pager:true,
             loop:false,
@@ -53,27 +53,46 @@
         }); 
     }
     // -- Accordéons
-    if($('.js-accordeon').length){
-        $('.js-accordeon').click( function(e) {  
-            $('.js-accordeon.is-open').removeClass('is-open').find('div').slideToggle(); 
-            $(this).toggleClass('is-open').find('div').slideToggle();     
+    if(jQuery('.js-accordeon').length){
+
+        jQuery('.js-accordeon').click( function(e) {   
+
+            jQuery('.js-accordeon.is-clicked').removeClass('is-clicked');
+            jQuery(this).addClass('is-clicked');
+
+            jQuery('.js-accordeon').each(function() {
+
+              var target = jQuery(this);
+
+              if ( !target.hasClass('is-clicked') && target.hasClass('is-open') ) {
+                target.removeClass('is-open').find('.js-accordeon-content').slideToggle();
+              }
+
+              if ( target.hasClass('is-clicked') && target.hasClass('is-open') ) {
+                target.removeClass('is-open').find('.js-accordeon-content').slideToggle();
+              } else if ( target.hasClass('is-clicked') && !target.hasClass('is-open') ) {
+                target.addClass('is-open').find('.js-accordeon-content').slideToggle();
+              }
+
+            });
         });
-        $('.js-accordeon').find('div').slideToggle();
+
+        jQuery('.js-accordeon-content').slideToggle();
     }
 
-    if($('.js-is-lightbox').length){
+    if(jQuery('.js-is-lightbox').length){
         // -- Lightbox Img
-        $('.js-is-lightbox').lightGallery({
+        jQuery('.js-is-lightbox').lightGallery({
             selector: 'this'
         });
     }
     // Mozaic Isotope
     // regarder :: http://isotope.metafizzy.co/filtering.html
-      if($('.main-isogrid').length){
+      if(jQuery('.main-isogrid').length){
           
-          $('.main-isogrid').each(function( i ) {   
-              //var $container = $(this);
-              var $container = $('.main-isogrid');                
+          jQuery('.main-isogrid').each(function( i ) {   
+              //var jQuerycontainer = jQuery(this);
+              var $container = jQuery('.main-isogrid');                
               /*var random_id = $container.attr('class').split('_');
               random_id = random_id[1];*/           
               var $the_iso_grid = $container.isotope({
@@ -88,8 +107,8 @@
                 }
               });
               
-              $('.button-group-sort').on( 'click', 'button', function() {   
-                var filterValue = $( this ).attr('data-filter');    
+              jQuery('.button-group-sort').on( 'click', 'button', function() {   
+                var filterValue = jQuery( this ).attr('data-filter');    
                 $the_iso_grid.isotope({ filter: filterValue });
                 
               });               

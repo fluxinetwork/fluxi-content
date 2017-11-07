@@ -32,16 +32,16 @@
                     "class": "",
                     "id": ""
                 },
-                "message": "<div style=\"background-color:#2a9bd9; color:white;padding:5px 10px;font-size:14px\">L'extrait de la page est utilis\u00e9 dans les pages avec un chapeau, dans le moteur de recherche, etc... Il doit r\u00e9sumer le contenu de la page sans \u00eatre trop long.<\/div>",
-                "new_lines": "",
-                "esc_html": 0
+                "message": "<div style=\"background-color:#2a9bd9; color:white;padding:5px 10px;font-size:14px\">L'extrait de la page est utilisé dans les pages avec un chapeau, dans le moteur de recherche, etc... Il doit résumer le contenu de la page sans être trop long.<\/div>",
+                "esc_html": 0,
+                "new_lines": ""
             },
             {
                 "key": "field_584fe426d4a26",
                 "label": "Extrait de la page",
                 "name": "extrait",
                 "type": "textarea",
-                "instructions": "Ce texte est utilis\u00e9 pour le r\u00e9f\u00e9rencement dans les moteurs de recherche et le flux RSS. Il n'a pas besoin d'\u00eatre tr\u00e8s long mais doit \u00eatre renseigner.",
+                "instructions": "Ce texte est utilisé pour le référencement dans les moteurs de recherche et le flux RSS. Il n'a pas besoin d'être très long mais doit être renseigner.",
                 "required": 1,
                 "conditional_logic": 0,
                 "wrapper": {
@@ -50,26 +50,19 @@
                     "id": ""
                 },
                 "default_value": "",
-                "placeholder": "",
+                "new_lines": "",
                 "maxlength": 340,
-                "rows": 4,
-                "new_lines": ""
+                "placeholder": "",
+                "rows": 4
             },
             {
                 "key": "field_584fe569d4a28",
-                "label": "Image \u00e0 la une",
+                "label": "Image à la une",
                 "name": "main_image",
                 "type": "image",
-                "instructions": "S\u00e9lectionnez une image HD de 750px de large minimum. Elle sera redimensionn\u00e9e et optimis\u00e9e apr\u00e8s upload. Renommer votre image avec un titre ayant du sens (pas DC5135.jpg). Renseignez \u00e9galement la l\u00e9gende si besoin, le texte alternatif et la description. Ces informations sont n\u00e9cessaires \u00e0 un bon r\u00e9f\u00e9rencement et am\u00e9liorent l'accessibilit\u00e9 du site.",
+                "instructions": "Sélectionnez une image HD de 750px de large minimum. Elle sera redimensionnée et optimisée après upload. Renommer votre image avec un titre ayant du sens (pas DC5135.jpg). Renseignez également la légende si besoin, le texte alternatif et la description. Ces informations sont nécessaires à un bon référencement et améliorent l'accessibilité du site.",
                 "required": 0,
-                "conditional_logic": [
-                    [
-                        {
-                            "field": "",
-                            "operator": "=="
-                        }
-                    ]
-                ],
+                "conditional_logic": 0,
                 "wrapper": {
                     "width": "",
                     "class": "",
@@ -104,7 +97,7 @@
             },
             {
                 "key": "field_559bee2288403",
-                "label": "El\u00e9ments de mise en page",
+                "label": "Eléments de mise en page",
                 "name": "elements_page",
                 "type": "flexible_content",
                 "instructions": "",
@@ -115,22 +108,22 @@
                     "class": "",
                     "id": ""
                 },
-                "button_label": "Ajouter un \u00e9l\u00e9ment de mise en page",
+                "button_label": "Ajouter un élément de mise en page",
                 "min": "",
                 "max": "",
                 "layouts": [
                     {
                         "key": "5630b9874805c",
-                        "name": "titre_1",
-                        "label": "Titre 1",
+                        "name": "titre",
+                        "label": "Titre",
                         "display": "row",
                         "sub_fields": [
                             {
-                                "key": "field_5630b77cee788",
-                                "label": "Titre 1",
-                                "name": "texte_titre",
-                                "type": "text",
-                                "instructions": "",
+                                "key": "field_59b91b09b74e2",
+                                "label": "Taille du titre",
+                                "name": "taille_titre",
+                                "type": "radio",
+                                "instructions": "Un titre H2 segmente un contenu entamé par un H1.",
                                 "required": 1,
                                 "conditional_logic": 0,
                                 "wrapper": {
@@ -138,25 +131,20 @@
                                     "class": "",
                                     "id": ""
                                 },
-                                "default_value": "",
-                                "placeholder": "",
-                                "prepend": "",
-                                "append": "",
-                                "maxlength": ""
-                            }
-                        ],
-                        "min": "",
-                        "max": ""
-                    },
-                    {
-                        "key": "587e3e3213f4d",
-                        "name": "titre_2",
-                        "label": "Titre 2",
-                        "display": "row",
-                        "sub_fields": [
+                                "choices": {
+                                    "2": "H1",
+                                    "3": "H2"
+                                },
+                                "allow_null": 0,
+                                "other_choice": 0,
+                                "save_other_choice": 0,
+                                "default_value": "2 : H1",
+                                "layout": "horizontal",
+                                "return_format": "value"
+                            },
                             {
-                                "key": "field_587e3e3213f4e",
-                                "label": "Titre 2",
+                                "key": "field_5630b77cee788",
+                                "label": "Texte",
                                 "name": "texte_titre",
                                 "type": "text",
                                 "instructions": "",
@@ -188,7 +176,7 @@
                                 "label": "Texte",
                                 "name": "texte",
                                 "type": "wysiwyg",
-                                "instructions": "Pour \u00e9viter des probl\u00e8mes de mise en page li\u00e9s \u00e0 des copier\/coller d'une source externe vers Wordpress, utilisez le \"coller en texte\" disponible dans la barre d'outils.",
+                                "instructions": "Pour éviter des problèmes de mise en page liés à des copier\/coller d'une source externe vers Wordpress, utilisez le \"coller en texte\" disponible dans la barre d'outils.",
                                 "required": 1,
                                 "conditional_logic": 0,
                                 "wrapper": {
@@ -196,10 +184,10 @@
                                     "class": "",
                                     "id": ""
                                 },
-                                "default_value": "",
                                 "tabs": "visual",
                                 "toolbar": "full",
                                 "media_upload": 0,
+                                "default_value": "",
                                 "delay": 0
                             }
                         ],
@@ -235,138 +223,6 @@
                                 "max_height": "",
                                 "max_size": "",
                                 "mime_types": ""
-                            }
-                        ],
-                        "min": "",
-                        "max": ""
-                    },
-                    {
-                        "key": "559d2ba5b8e4d",
-                        "name": "liste",
-                        "label": "Liste",
-                        "display": "row",
-                        "sub_fields": [
-                            {
-                                "key": "field_559d36b99ae4b",
-                                "label": "Type de liste",
-                                "name": "type_liste",
-                                "type": "select",
-                                "instructions": "",
-                                "required": 0,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "multiple": 0,
-                                "allow_null": 0,
-                                "choices": {
-                                    "simple": "Liste simple",
-                                    "numero": "Liste num\u00e9rot\u00e9e"
-                                },
-                                "default_value": [
-                                    "Liste simple"
-                                ],
-                                "ui": 0,
-                                "ajax": 0,
-                                "placeholder": "",
-                                "return_format": "value",
-                                "disabled": 0,
-                                "readonly": 0
-                            },
-                            {
-                                "key": "field_559d2c1ab8e4e",
-                                "label": "El\u00e9ment de la liste",
-                                "name": "element_liste",
-                                "type": "repeater",
-                                "instructions": "",
-                                "required": 1,
-                                "conditional_logic": 0,
-                                "wrapper": {
-                                    "width": "",
-                                    "class": "",
-                                    "id": ""
-                                },
-                                "min": 0,
-                                "max": 0,
-                                "layout": "row",
-                                "button_label": "Ajouter un \u00e9l\u00e9ment \u00e0 la liste",
-                                "collapsed": "",
-                                "sub_fields": [
-                                    {
-                                        "key": "field_559d30bfb8e50",
-                                        "label": "Type d'\u00e9l\u00e9ment",
-                                        "name": "type_element",
-                                        "type": "select",
-                                        "instructions": "",
-                                        "required": 0,
-                                        "conditional_logic": 0,
-                                        "wrapper": {
-                                            "width": "",
-                                            "class": "",
-                                            "id": ""
-                                        },
-                                        "multiple": 0,
-                                        "allow_null": 0,
-                                        "choices": {
-                                            "texte": "Du texte",
-                                            "lien": "Un lien"
-                                        },
-                                        "default_value": [
-                                            "Du texte"
-                                        ],
-                                        "ui": 0,
-                                        "ajax": 0,
-                                        "placeholder": "",
-                                        "return_format": "value",
-                                        "disabled": 0,
-                                        "readonly": 0
-                                    },
-                                    {
-                                        "key": "field_559d2c73b8e4f",
-                                        "label": "Texte de l'\u00e9l\u00e9ment",
-                                        "name": "texte_element",
-                                        "type": "textarea",
-                                        "instructions": "",
-                                        "required": 1,
-                                        "conditional_logic": 0,
-                                        "wrapper": {
-                                            "width": "",
-                                            "class": "",
-                                            "id": ""
-                                        },
-                                        "default_value": "",
-                                        "new_lines": "",
-                                        "maxlength": "",
-                                        "placeholder": "",
-                                        "rows": 1
-                                    },
-                                    {
-                                        "key": "field_559d3100b8e51",
-                                        "label": "Url du lien",
-                                        "name": "url_lien",
-                                        "type": "url",
-                                        "instructions": "http:\/\/www.url.fr",
-                                        "required": 1,
-                                        "conditional_logic": [
-                                            [
-                                                {
-                                                    "field": "field_559d30bfb8e50",
-                                                    "operator": "==",
-                                                    "value": "lien"
-                                                }
-                                            ]
-                                        ],
-                                        "wrapper": {
-                                            "width": "",
-                                            "class": "",
-                                            "id": ""
-                                        },
-                                        "default_value": "",
-                                        "placeholder": "http:\/\/"
-                                    }
-                                ]
                             }
                         ],
                         "min": "",
@@ -446,10 +302,10 @@
                             },
                             {
                                 "key": "field_5885e191b811a",
-                                "label": "Afficher en tant que bouton",
-                                "name": "afficher_bouton",
-                                "type": "true_false",
-                                "instructions": "Cochez cette case pour afficher le lien texte en mode bouton. Le texte du lien doit \u00eatre relativement court pour s'afficher correctement.",
+                                "label": "Option du lien",
+                                "name": "type_lien",
+                                "type": "select",
+                                "instructions": "Cochez cette case pour afficher le lien texte en mode bouton. Le texte du lien doit être relativement court pour s'afficher correctement.",
                                 "required": 0,
                                 "conditional_logic": 0,
                                 "wrapper": {
@@ -457,11 +313,17 @@
                                     "class": "",
                                     "id": ""
                                 },
-                                "default_value": 0,
-                                "message": "",
-                                "ui": 0,
-                                "ui_on_text": "",
-                                "ui_off_text": ""
+                                "choices": {
+                                    "externe": "Lien externe",
+                                    "bouton": "Bouton"
+                                },
+                                "default_value": [],
+                                "allow_null": 1,
+                                "multiple": 1,
+                                "ui": 1,
+                                "ajax": 0,
+                                "return_format": "value",
+                                "placeholder": ""
                             }
                         ],
                         "min": "",
@@ -539,7 +401,7 @@
                         "sub_fields": [
                             {
                                 "key": "field_587e3fdc3fdbc",
-                                "label": "Equipier r\u00e9f\u00e9rent",
+                                "label": "Equipier référent",
                                 "name": "equipier_referent",
                                 "type": "relationship",
                                 "instructions": "",
@@ -773,7 +635,7 @@
                             },
                             {
                                 "key": "field_587e52a620168",
-                                "label": "Fichier r\u00e9f\u00e9rent",
+                                "label": "Fichier référent",
                                 "name": "fichier_referent",
                                 "type": "file",
                                 "instructions": "",
@@ -797,15 +659,15 @@
                     {
                         "key": "5886091763106",
                         "name": "accordeon",
-                        "label": "Accord\u00e9on",
+                        "label": "Accordéon",
                         "display": "row",
                         "sub_fields": [
                             {
                                 "key": "field_5886092a63107",
-                                "label": "Titre de l'accord\u00e9on",
+                                "label": "Titre de l'accordéon",
                                 "name": "titre_accordeon",
                                 "type": "text",
-                                "instructions": "Titre cliquable toujours visible qui permet de d\u00e9ployer l'accord\u00e9on.",
+                                "instructions": "Titre cliquable toujours visible qui permet de déployer l'accordéon.",
                                 "required": 1,
                                 "conditional_logic": 0,
                                 "wrapper": {
@@ -821,7 +683,7 @@
                             },
                             {
                                 "key": "field_588609a563108",
-                                "label": "Contenu de l'accord\u00e9on",
+                                "label": "Contenu de l'accordéon",
                                 "name": "contenu_accordeon",
                                 "type": "flexible_content",
                                 "instructions": "",
@@ -832,9 +694,9 @@
                                     "class": "",
                                     "id": ""
                                 },
+                                "button_label": "Ajouter du contenu dans l'accordéon",
                                 "min": "",
                                 "max": "",
-                                "button_label": "Ajouter du contenu dans l'accord\u00e9on",
                                 "layouts": [
                                     {
                                         "key": "588609f16fb67",
@@ -844,7 +706,7 @@
                                         "sub_fields": [
                                             {
                                                 "key": "field_58860a2063109",
-                                                "label": "Texte dans l'accord\u00e9on",
+                                                "label": "Texte dans l'accordéon",
                                                 "name": "texte",
                                                 "type": "wysiwyg",
                                                 "instructions": "",
@@ -888,102 +750,13 @@
                                                 "allow_null": 0,
                                                 "choices": {
                                                     "simple": "Liste simple",
-                                                    "numero": "Liste num\u00e9rot\u00e9e"
+                                                    "numero": "Liste numérotée"
                                                 },
                                                 "default_value": [],
                                                 "ui": 0,
                                                 "ajax": 0,
                                                 "placeholder": "",
                                                 "return_format": "value"
-                                            },
-                                            {
-                                                "key": "field_58860a616310b",
-                                                "label": "Liste dans l'accord\u00e9on",
-                                                "name": "element_liste",
-                                                "type": "repeater",
-                                                "instructions": "",
-                                                "required": 1,
-                                                "conditional_logic": 0,
-                                                "wrapper": {
-                                                    "width": "",
-                                                    "class": "",
-                                                    "id": ""
-                                                },
-                                                "min": 0,
-                                                "max": 0,
-                                                "layout": "block",
-                                                "button_label": "Ajouter un \u00e9l\u00e9ment \u00e0 la liste",
-                                                "collapsed": "",
-                                                "sub_fields": [
-                                                    {
-                                                        "key": "field_5886248cdcc90",
-                                                        "label": "Type d'\u00e9l\u00e9ment",
-                                                        "name": "type_element",
-                                                        "type": "select",
-                                                        "instructions": "",
-                                                        "required": 0,
-                                                        "conditional_logic": 0,
-                                                        "wrapper": {
-                                                            "width": "",
-                                                            "class": "",
-                                                            "id": ""
-                                                        },
-                                                        "multiple": 0,
-                                                        "allow_null": 0,
-                                                        "choices": {
-                                                            "texte": "Du texte",
-                                                            "lien": "Un lien"
-                                                        },
-                                                        "default_value": [],
-                                                        "ui": 0,
-                                                        "ajax": 0,
-                                                        "placeholder": "",
-                                                        "return_format": "value"
-                                                    },
-                                                    {
-                                                        "key": "field_58860aa66310c",
-                                                        "label": "Texte de l'\u00e9l\u00e9ment",
-                                                        "name": "texte_element",
-                                                        "type": "textarea",
-                                                        "instructions": "",
-                                                        "required": 1,
-                                                        "conditional_logic": 0,
-                                                        "wrapper": {
-                                                            "width": "",
-                                                            "class": "",
-                                                            "id": ""
-                                                        },
-                                                        "default_value": "",
-                                                        "new_lines": "",
-                                                        "maxlength": "",
-                                                        "placeholder": "",
-                                                        "rows": 1
-                                                    },
-                                                    {
-                                                        "key": "field_588626947384b",
-                                                        "label": "Url du lien",
-                                                        "name": "url_lien",
-                                                        "type": "url",
-                                                        "instructions": "",
-                                                        "required": 1,
-                                                        "conditional_logic": [
-                                                            [
-                                                                {
-                                                                    "field": "field_5886248cdcc90",
-                                                                    "operator": "==",
-                                                                    "value": "lien"
-                                                                }
-                                                            ]
-                                                        ],
-                                                        "wrapper": {
-                                                            "width": "",
-                                                            "class": "",
-                                                            "id": ""
-                                                        },
-                                                        "default_value": "",
-                                                        "placeholder": ""
-                                                    }
-                                                ]
                                             }
                                         ],
                                         "min": "",
@@ -1041,9 +814,16 @@
                     "operator": "==",
                     "value": "page"
                 }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "projets"
+                }
             ]
         ],
-        "menu_order": 1,
+        "menu_order": 2,
         "position": "acf_after_title",
         "style": "default",
         "label_placement": "top",
