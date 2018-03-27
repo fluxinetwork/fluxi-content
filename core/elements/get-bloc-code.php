@@ -17,7 +17,7 @@
 
 		if( $code ):
 
-			$output = '<p class="fitvid">'.$code.'</p>';
+			$output = '<p class="fitvids">'.$code.'</p>';
 			return $output;
 	
 		endif;
