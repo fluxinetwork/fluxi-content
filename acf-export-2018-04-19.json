@@ -682,10 +682,10 @@
                                 "append": ""
                             },
                             {
-                                "key": "field_588609a563108",
-                                "label": "Contenu de l'accordéon",
-                                "name": "contenu_accordeon",
-                                "type": "flexible_content",
+                                "key": "field_58860a2063109",
+                                "label": "Texte dans l'accordéon",
+                                "name": "texte_accordeon",
+                                "type": "wysiwyg",
                                 "instructions": "",
                                 "required": 1,
                                 "conditional_logic": 0,
@@ -694,75 +694,11 @@
                                     "class": "",
                                     "id": ""
                                 },
-                                "button_label": "Ajouter du contenu dans l'accordéon",
-                                "min": "",
-                                "max": "",
-                                "layouts": [
-                                    {
-                                        "key": "588609f16fb67",
-                                        "name": "texte",
-                                        "label": "Texte",
-                                        "display": "block",
-                                        "sub_fields": [
-                                            {
-                                                "key": "field_58860a2063109",
-                                                "label": "Texte dans l'accordéon",
-                                                "name": "texte",
-                                                "type": "wysiwyg",
-                                                "instructions": "",
-                                                "required": 1,
-                                                "conditional_logic": 0,
-                                                "wrapper": {
-                                                    "width": "",
-                                                    "class": "",
-                                                    "id": ""
-                                                },
-                                                "tabs": "visual",
-                                                "toolbar": "full",
-                                                "media_upload": 0,
-                                                "default_value": "",
-                                                "delay": 0
-                                            }
-                                        ],
-                                        "min": "",
-                                        "max": ""
-                                    },
-                                    {
-                                        "key": "58860a5b6310a",
-                                        "name": "liste",
-                                        "label": "Liste",
-                                        "display": "block",
-                                        "sub_fields": [
-                                            {
-                                                "key": "field_5886219e035cf",
-                                                "label": "Type de liste",
-                                                "name": "type_liste",
-                                                "type": "select",
-                                                "instructions": "",
-                                                "required": 0,
-                                                "conditional_logic": 0,
-                                                "wrapper": {
-                                                    "width": "",
-                                                    "class": "",
-                                                    "id": ""
-                                                },
-                                                "multiple": 0,
-                                                "allow_null": 0,
-                                                "choices": {
-                                                    "simple": "Liste simple",
-                                                    "numero": "Liste numérotée"
-                                                },
-                                                "default_value": [],
-                                                "ui": 0,
-                                                "ajax": 0,
-                                                "placeholder": "",
-                                                "return_format": "value"
-                                            }
-                                        ],
-                                        "min": "",
-                                        "max": ""
-                                    }
-                                ]
+                                "default_value": "",
+                                "tabs": "visual",
+                                "toolbar": "full",
+                                "media_upload": 0,
+                                "delay": 0
                             }
                         ],
                         "min": "",
@@ -819,7 +755,7 @@
                 {
                     "param": "post_type",
                     "operator": "==",
-                    "value": "projets"
+                    "value": "post"
                 }
             ]
         ],

@@ -4,8 +4,8 @@
 	 * get_bloc_accordeon
 	 *
 	 *  @type	function
-	 *  @date	23/01/17
-	 *  @since	1.0.0
+	 *  @date	19/04/18
+	 *  @since	1.1.0
 	 *
 	 *  @param INT $post_id
 	 *  @return HTML - ACF accordeon fields
@@ -20,27 +20,17 @@
 			$fluxi_content_accordeon = '<div class="c-accordeon content-jump js-accordeon">';
 
 			$fluxi_content_accordeon .= '<h3 class="c-accordeon__title">';
-			$fluxi_content_accordeon .= '<button class="c-roundButton c-roundButton--ghost c-roundButton--2icon c-accordeon__title__icon"><i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-minus" aria-hidden="true"></i></button>';
 			$fluxi_content_accordeon .= get_sub_field('titre_accordeon');
+			$fluxi_content_accordeon .= '<button class="c-accordeon__title__icon"><i class="far fa-angle-down" aria-hidden="true"></i></button>';
 			$fluxi_content_accordeon .= '</h3>';
 
-			if( have_rows('contenu_accordeon') ):				
+			$text_accordeon = get_sub_field('texte_accordeon');
 
-				$fluxi_content_accordeon .= '<div class="c-accordeon__content js-accordeon-content">';
+			if( $text_accordeon ):				
 
-				while( have_rows('contenu_accordeon') ): the_row(); 
+				$fluxi_content_accordeon .= '<div class="c-accordeon__content js-accordeon-content">';			
 
-					if ( get_row_layout() == 'liste' ):					
-
-						$fluxi_content_accordeon .= get_bloc_liste ();
-
-					elseif( get_row_layout() == 'texte' ):
-
-						$fluxi_content_accordeon .= get_bloc_texte ();
-
-					endif;
-
-				endwhile;
+					$fluxi_content_accordeon .= $text_accordeon;
 
 				$fluxi_content_accordeon .= '</div>';
 
