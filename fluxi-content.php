@@ -178,8 +178,8 @@ if( ! class_exists('fluxicontent') ) :
 	 * fluxi_content_save
 	 *
 	 *  @type	class
-	 *  @date	16/06/16
-	 *  @since	1.0.0
+	 *  @date	02/05/18
+	 *  @since	1.1.0
 	 *
 	 *  @param   INT - $post_id
 	 *  @return  N/A
@@ -211,7 +211,13 @@ if( ! class_exists('fluxicontent') ) :
 
 		    	// Get Fluxi content
 		    	$the_fluxi_content = get_fluxi_fields($post_id);
-		    	$fluxi_resum = get_field('extrait', $post_id);
+		    	
+		    	// Get Fluxi extrait
+		    	if( get_field('extrait', $post_id) ):
+			    	$fluxi_resum = get_field('extrait', $post_id);
+			    else:
+			    	$fluxi_resum = get_bloginfo( 'description' );
+			    endif;
 
 		    	// Update post content with Fluxi content
 		    	wp_update_post(
